@@ -18,7 +18,7 @@ export default function Search() {
       const { data, error } = await supabase
         .from("agents")
         .select("name, zip, nmls")
-        .eq("zip", zip);
+        .eq("zip", String (zip));
       if (error) console.error(error);
       else setAgents(data);
     };
